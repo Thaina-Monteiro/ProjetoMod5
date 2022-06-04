@@ -5,10 +5,13 @@ import './Usuarios.css';
 import { AiFillDelete } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import {HiUserAdd} from 'react-icons/hi'
+import { useNavigate } from 'react-router-dom';
 
 function Usuarios() {
 
 	const [usuarios, setUsuarios] = useState([])
+
+	const navigate = useNavigate()
 
 	const obtemUsuarios = async () => {
 		try {
@@ -26,6 +29,10 @@ function Usuarios() {
 		obtemUsuarios()
 	}
 
+	const novoUsuario = () => {
+		navigate('novo')
+	}
+
 	useEffect(() => {
 		obtemUsuarios()
 	}, [])
@@ -33,7 +40,7 @@ function Usuarios() {
 	return (
 		<main>
 			<div className='usuario__novo'>
-				<Button adicionar={true} onClick={() => console.log('novo ein')}>
+				<Button adicionar={true} onClick={() => novoUsuario()}>
 				<HiUserAdd size='18px' style={{ marginRight: '5px' }} />
 					Adicionar um novo usuário
 				</Button>

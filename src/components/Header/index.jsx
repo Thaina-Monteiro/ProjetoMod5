@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css';
-
+import { Link } from 'react-router-dom';
 function Header() {
 	const itensNav = [
 		{
@@ -16,7 +16,7 @@ function Header() {
 		{
 			label: 'Usuarios',
 			id: 2,
-			rota: '/'
+			rota: '/usuarios'
 		},
 		{
 			label: 'Fornecedores',
@@ -41,7 +41,11 @@ function Header() {
 			<nav>
 				<ul>
 					{itensNav.map(item => (
-						<li key={item.id}>{item.label}</li>
+						<li key={item.id}>
+							<Link to={item.rota}>
+								{item.label}
+							</Link>
+						</li>
 					))}
 				</ul>
 			</nav>
