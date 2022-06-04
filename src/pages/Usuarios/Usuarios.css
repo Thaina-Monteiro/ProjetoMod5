@@ -1,0 +1,31 @@
+main {
+	display: grid;
+	background-color: black;
+	padding: 2rem;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+	justify-content: center;
+	grid-auto-rows: 50vh;
+	gap: 2rem;
+}
+
+.usuario {
+	background-color: white;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	flex-grow: 1;
+	background-color: blueviolet;
+}
+
+.body {
+	background-color: brown;
+	flex-grow: 3;
+}
+
+.footer {
+	flex-grow: 1;
+	background-color: aqua;
+}
