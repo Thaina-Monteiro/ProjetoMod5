@@ -33,6 +33,10 @@ function Usuarios() {
 		navigate('novo')
 	}
 
+	const editarUsuario = (id) => {
+		navigate(`${id}`)
+	}
+
 	useEffect(() => {
 		obtemUsuarios()
 	}, [])
@@ -62,7 +66,7 @@ function Usuarios() {
 							<AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
 							Deletar
 						</Button>
-						<Button>
+						<Button onClick={() => editarUsuario(usuario.id)}>
 							<AiFillEdit color='white' size='18px' style={{ marginRight: '5px' }} />
 							Editar
 						</Button>
