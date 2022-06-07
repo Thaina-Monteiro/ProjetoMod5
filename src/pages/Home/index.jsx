@@ -1,11 +1,11 @@
 import React from 'react'
 import style from './Home.module.scss';
-import imagemPecas from '../../Asset/AdobeStock_122836383_Preview.jpeg'
+import imagemPecas from '../../Asset/AdobeStock_302108098_Preview.jpeg'
 import imagemSeguros from '../../Asset/AdobeStock_412460677_Preview.jpeg'
 import imagemUsuarios from '../../Asset/AdobeStock_122836383_Preview.jpeg'
 import imagemFornecedores from "../../Asset/AdobeStock_321333404_Preview.jpeg"
 import imagemFuncionarios from '../../Asset/AdobeStock_306875857_Preview.jpeg'
-import imagemVendas from "../../Asset/AdobeStock_321333404_Preview.jpeg"
+import imagemVendas from "../../Asset/AdobeStock_308328093_Preview.jpeg"
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
@@ -53,7 +53,7 @@ function Home() {
 
 	return (
 		<main className={style.principal}>
-			<h2>Administrativo</h2>
+			<h2>Bem-vindo ao seu painel administrativo!</h2>
 			<section className={style.secoes}>
 				{itens.map(item => (
 					<div key={item.id} className={style.secao} onClick={() => navigate(`${item.rota}`)}>

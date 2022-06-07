@@ -8,11 +8,16 @@
 	flex-direction: column;
 	color: #3B0AA8;
 
+	h2 {
+		margin: 2rem 0;
+	}
+
 	.secoes {
 		flex-grow: 1;
 		padding: 1rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+		grid-template-rows: 45vh;
 		justify-content: center;
 		gap: 2rem;
 		
@@ -28,10 +33,10 @@
 
 			&:hover .secao__img {
 				filter: blur(0px);
-				transition: .5s;
 			}
 
 			&__img {
+				transition: .5s;
 				height: 100%;
 				width: 100%;
 				filter: blur(2px);
@@ -41,6 +46,7 @@
 					height: 100%;
 					width: 100%;
 					object-fit:cover;
+					transition: .5s;
 
 				}
 			}
@@ -50,6 +56,8 @@
 				top: 50%;
     		left: 50%;
 				color: #3B0AA8;
+				// color: white;
+				color: #fcec10;
     		transform: translate(-50%, -50%);
 				font-size: 3rem;
 				text-shadow: 5px 5px 0px #150041;
