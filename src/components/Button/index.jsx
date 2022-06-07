@@ -1,12 +1,17 @@
 import React from 'react'
-import './Button.css';
+import style from './Button.module.scss';
+import classNames from 'classnames';
 
 function Button(props) {
-	const {children, deletar, onClick, adicionar} = props
+	const {children, deletar, onClick, adicionar, tipo='button'} = props
 	return (
 		<>
-			<button type='button'
-			className={`${deletar ? 'deletar' : ''} ${adicionar ? 'adicionar' : ''}`}
+			<button type={tipo}
+			className={classNames({
+				[style.button]: true,
+				[style.deletar]: deletar === true,
+				[style.adicionar]: adicionar === true
+			})}
 			onClick={onClick}>
 				{children}
 			</button>

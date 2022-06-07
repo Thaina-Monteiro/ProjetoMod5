@@ -1,4 +1,4 @@
-main {
+.principal {
 	padding: 2rem;
 	position: relative;
 	color: #3B0AA8
@@ -7,6 +7,11 @@ main {
 .usuario__novo {
 	width: 80%;
 	margin: 0 auto;
+}
+
+.loading {
+	text-align: center;
+	margin: 2rem 0;
 }
 
 .usuarios {
@@ -20,7 +25,6 @@ main {
 
 .usuario {
 	background-color: #fcec10;
-	/* padding: 1rem 0; */
 	display: flex;
 	flex-direction: column;
 	box-shadow: 4px 4px 5px #3B0AA875;
