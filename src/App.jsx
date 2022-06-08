@@ -10,7 +10,6 @@ import EditarUsuario from './pages/Usuarios/EditarUsuario'
 import EditFuncionario from './pages/Funcionario/EditFuncionario'
 
 function App() {
-
 	return (
 		<>
 			<BrowserRouter>
