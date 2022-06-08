@@ -21,7 +21,7 @@ function Header() {
 		{
 			label: 'Fornecedores',
 			id: 3,
-			rota: '/'
+			rota: '/fornecedor'
 		},
 		{
 			label: 'Funcionario',
