@@ -53,8 +53,6 @@ function EditarPeca() {
         window.location.href = '/pecas'
 	}
 
-    // console.log('opa',peca)
-
     return(
         <main className={style.principal}>
 			<h2>Editar Peça</h2>
