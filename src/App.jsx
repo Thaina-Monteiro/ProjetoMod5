@@ -19,30 +19,21 @@ function App() {
 		<>
 			<BrowserRouter>
 				<Header />
-				
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='/usuarios' element={<Usuarios />} />
-					<Route path='/usuarios/novo' element={<NovoUsuario />} />
-					<Route path='/usuarios/:id' element={<EditarUsuario />} />
-					
-					{/* Rotas de Peças */}
+					<Route path='/usuarios'>
+						<Route index element={<Usuarios />} />
+						<Route path='novo' element={<NovoUsuario />} />
+						<Route path=':id' element={<EditarUsuario />} />
+					</Route>
 					<Route path='/pecas' element={<Pecas />}></Route>
 					<Route path='/pecas/novo' element={<CadastrarPeca />} />
-					<Route path='/pecas/:id' element={<EditarPeca />}></Route>
-				</Routes>
-				
-				<Routes>
-					<Route path='/fornecedores' element={<Fornecedores/>}></Route>
-				</Routes>
-
-				<Routes>
-					<Route path='/' element={<Home />} />
+					<Route path='/pecas/:id' element={<EditarPeca />} />
+					<Route path='/fornecedores' element={<Fornecedores />} />
 					<Route path='/funcionario' element={<Funcionario />} />
 					<Route path='/funcionario/novo' element={<NovoFuncionario />} />
 					<Route path='/funcionario/:id' element={<EditFuncionario />} />
 				</Routes>
-
 				<Footer />
 			</BrowserRouter>
 		</>

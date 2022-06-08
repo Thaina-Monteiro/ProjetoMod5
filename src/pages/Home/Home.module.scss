@@ -17,7 +17,7 @@
 		padding: 1rem;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
-		grid-template-rows: 45vh;
+		grid-auto-rows: 45vh;
 		justify-content: center;
 		gap: 2rem;
 		
