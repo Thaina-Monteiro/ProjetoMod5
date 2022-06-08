@@ -6,6 +6,7 @@ import Button from '../../components/Button';
 import { AiFillDelete } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import axios from 'axios';
+import {HiUserAdd} from 'react-icons/hi'
 
 function Pecas() {
     const [pecas, setPecas] = useState([])
@@ -41,17 +42,21 @@ function Pecas() {
         obtemPecas()
 	}
 
+    const novaPeca = () => {
+		navigate('novo')
+	}
+
     useEffect(() =>{
         obtemPecas()
     }, [])
 
-    console.log('pecas ', pecas)
+
     return(
             <div className={style.pecas}>
             <h1>Controle de Peças</h1>
-            <Button adicionar={true} onClick={() => novoUsuario()}>
+            <Button adicionar={true} onClick={() => novaPeca()}>
 				<HiUserAdd size='18px' style={{ marginRight: '5px' }} />
-					Adicionar um novo usuário
+					Adicionar Peça
 			</Button>
             <tbody>
                 <table >

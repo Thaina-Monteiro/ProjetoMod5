@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Usuarios from './pages/Usuarios'
 import Pecas from './pages/Pecas'
 import EditarPeca from './pages/Pecas/EditarPeca'
+import CadastrarPeca from './pages/Pecas/CadastrarPeca'
 import Funcionario from './pages/Funcionario'
 import Home from './pages/Home'
 import NovoUsuario from './pages/Usuarios/NovoUsuario'
@@ -26,6 +27,7 @@ function App() {
 					
 					{/* Rotas de Peças */}
 					<Route path='/pecas' element={<Pecas />}></Route>
+					<Route path='/pecas/novo' element={<CadastrarPeca />} />
 					<Route path='/pecas/:id' element={<EditarPeca />}></Route>
 				</Routes>
 				
