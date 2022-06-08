@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from './components/Header'
 import Usuarios from './pages/Usuarios'
+import Pecas from './pages/Pecas'
+import EditarPeca from './pages/Pecas/EditarPeca'
 import Funcionario from './pages/Funcionario'
 import Home from './pages/Home'
 import NovoUsuario from './pages/Usuarios/NovoUsuario'
@@ -19,6 +21,8 @@ function App() {
 					<Route path='/usuarios' element={<Usuarios />} />
 					<Route path='/usuarios/novo' element={<NovoUsuario />} />
 					<Route path='/usuarios/:id' element={<EditarUsuario />} />
+					<Route path='/pecas' element={<Pecas />}></Route>
+					<Route path='/pecas/:id' element={<EditarPeca />}></Route>
 				</Routes>
 				<Routes>
 					<Route path='/' element={<Home />} />
