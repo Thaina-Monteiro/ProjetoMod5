@@ -13,6 +13,7 @@ import EditarUsuario from './pages/Usuarios/EditarUsuario'
 import Fornecedores from './pages/Fornecedores'
 import EditFuncionario from './pages/Funcionario/EditFuncionario'
 import Footer from './components/Footer'
+import Vendas from './pages/Vendas/Vendas'
 
 function App() {
 	return (
@@ -33,6 +34,7 @@ function App() {
 					<Route path='/funcionario' element={<Funcionario />} />
 					<Route path='/funcionario/novo' element={<NovoFuncionario />} />
 					<Route path='/funcionario/:id' element={<EditFuncionario />} />
+					<Route path='/vendas' element={<Vendas />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>
