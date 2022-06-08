@@ -26,7 +26,7 @@ function App() {
 						<Route path='novo' element={<NovoUsuario />} />
 						<Route path=':id' element={<EditarUsuario />} />
 					</Route>
-					<Route path='/pecas' element={<Pecas />}></Route>
+					<Route path='/pecas' element={<Pecas />}/>
 					<Route path='/pecas/novo' element={<CadastrarPeca />} />
 					<Route path='/pecas/:id' element={<EditarPeca />} />
 					<Route path='/fornecedores' element={<Fornecedores />} />
