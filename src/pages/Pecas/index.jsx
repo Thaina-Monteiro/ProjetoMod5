@@ -64,6 +64,8 @@ function Pecas() {
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Qtd</th>
+                        <th>Marca</th>                        
+                        <th>Garantia</th>
                         <th>Categoria</th>
                         <th>Preço</th>
                     </tr>
@@ -71,9 +73,11 @@ function Pecas() {
                 {pecas.map( (peca, index) => {
                     return(
                         <tr key={index}>
-                            <td className="id">{peca.id}</td>
+                            <td>{peca.id}</td>
                             <td>{peca.nome ?? peca.nome.toUpperCase() }</td>
                             <td>{peca.quantidade}</td>
+                            <td>{peca.marca}</td>
+                            <td>{peca.garantia}</td>
                             <td>{peca.categoria ?? peca.categoria.toUpperCase() }</td>
                             <td>R${peca.preço},00</td>
                             <Button btnPecas = {true} onClick={() => editarPeca(peca.id)}>
