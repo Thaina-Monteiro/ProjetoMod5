@@ -6,6 +6,7 @@ import { AiFillDelete } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import {HiUserAdd} from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
+import CardUsuario from '../../components/CardUsuario';
 
 function Usuarios() {
 
@@ -54,30 +55,11 @@ function Usuarios() {
 			{loading &&
 			<h2 className={style.loading}>Estamos carregando...</h2>
 			}
-			<div className={style.usuarios}>
+			<section className={style.usuarios}>
 			{usuarios.map(usuario => (
-				<div key={usuario.id} className={style.usuario}>
-					<div className={style.header}>
-						<h2>{usuario.nome}</h2>
-					</div>
-					<div className={style.body}>
-						<p><span>Email: </span>{usuario.email}</p>
-						<p><span>Endereço: </span>{usuario.endereco}</p>
-						<p><span>Cidade: </span>{usuario.cidade}, {usuario.estado}</p>
-					</div>
-					<div className={style.footer}>
-						<Button deletar={true} onClick={() => deletarUsuario(usuario.id)}>
-							<AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
-							Deletar
-						</Button>
-						<Button onClick={() => editarUsuario(usuario.id)}>
-							<AiFillEdit color='white' size='18px' style={{ marginRight: '5px' }} />
-							Editar
-						</Button>
-					</div>
-				</div>
+				<CardUsuario key={usuario.id} usuario={usuario} deletarUsuario={deletarUsuario} editarUsuario={editarUsuario}/>
 			))}
-			</div>
+			</section>
 		</main>
 	)
 }

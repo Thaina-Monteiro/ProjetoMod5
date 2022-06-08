@@ -11,7 +11,6 @@ function NovoUsuario() {
 	const [endereco, setEndereco] = useState('')
 	const [cidade, setCidade] = useState('')
 	const [estado, setEstado] = useState('')
-	const [erro, setErro] = useState('')
 
 	const enviarDados = async (e) => {
 		e.preventDefault()
