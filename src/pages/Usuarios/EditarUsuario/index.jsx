@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './EditarUsuario.css';
+import style from './EditarUsuario.module.scss'
 import api from '../../../services/axios';
 import { useParams } from 'react-router-dom';
+import Button from '../../../components/Button';
 
 function EditarUsuario() {
 
@@ -39,39 +40,30 @@ function EditarUsuario() {
 	}, [])
 	
 	return (
-		<main>
-			<form action="" onSubmit={enviarDadosAtualizados}>
-				<section className='form__secao'>
-					<label htmlFor="">Digite seu nome</label>
-					<input type="text" 
-					value={nome} 
-					onChange={(e) => setNome(e.target.value)}/>
+		<main className={style.principal}>
+			<h2>Editar cliente</h2>
+			<form action="" onSubmit={enviarDadosAtualizados} className={style.form}>
+				<section className={style.form__secao}>
+					<label htmlFor="nome">Digite seu nome</label>
+					<input type="text" id='nome' value={nome} onChange={(e) => setNome(e.target.value)}/>
 				</section>
-				<section className='form__secao'>
-					<label htmlFor="">Digite seu email</label>
-					<input type="email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)} />
+				<section className={style.form__secao}>
+					<label htmlFor="email">Digite seu email</label>
+					<input type="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 				</section>
-				<section className='form__secao'>
-					<label htmlFor="">Digite seu endereco</label>
-					<input type="text"
-					value={endereco}
-					onChange={(e) => setEndereco(e.target.value)}/>
+				<section className={style.form__secao}>
+					<label htmlFor="endereco">Digite seu endereco</label>
+					<input type="text" id='endereco' value={endereco} onChange={(e) => setEndereco(e.target.value)}/>
 				</section>
-				<section className='form__secao'>
-					<label htmlFor="">Digite sua cidade</label>
-					<input type="text" 
-					value={cidade}
-					onChange={(e) => setCidade(e.target.value)}/>
+				<section className={style.form__secao}>
+					<label htmlFor="cidade">Digite sua cidade</label>
+					<input type="text" id='cidade' value={cidade} onChange={(e) => setCidade(e.target.value)}/>
 				</section>
-				<section className='form__secao'>
-					<label htmlFor="">Digite seu estado</label>
-					<input type="text" 
-					value={estado}
-					onChange={(e) => setEstado(e.target.value)}/>
+				<section className={style.form__secao}>
+					<label htmlFor="estado">Digite seu estado</label>
+					<input type="text" id='estado' value={estado} onChange={(e) => setEstado(e.target.value)}/>
 				</section>
-				<button type="submit">Enviar</button>
+				<Button tipo='submit' adicionar={true}>Enviar</Button>
 			</form>
 		</main>
 	)

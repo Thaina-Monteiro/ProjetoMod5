@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button';
 import api from '../../services/axios'
-import './Usuarios.css';
+import style from './Usuarios.module.scss'
 import { AiFillDelete } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import {HiUserAdd} from 'react-icons/hi'
@@ -10,15 +10,17 @@ import { useNavigate } from 'react-router-dom';
 function Usuarios() {
 
 	const [usuarios, setUsuarios] = useState([])
+	const [loading, setLoading] = useState(false)
 
 	const navigate = useNavigate()
 
 	const obtemUsuarios = async () => {
 		try {
+			setLoading(true)
 			const response = await api.get('/usuarios')
 			const listaUsuarios = response.data
-			console.log(response.data)
 			setUsuarios([...listaUsuarios])
+			setLoading(false)
 		} catch (error) {
 			console.log(error);
 		}
@@ -42,26 +44,28 @@ function Usuarios() {
 	}, [])
 
 	return (
-		<main>
-			<div className='usuario__novo'>
+		<main className={style.principal}>
+			<div className={style.usuario__novo}>
 				<Button adicionar={true} onClick={() => novoUsuario()}>
 				<HiUserAdd size='18px' style={{ marginRight: '5px' }} />
 					Adicionar um novo usuário
 				</Button>
 			</div>
-			<div className='usuarios'>
+			{loading &&
+			<h2 className={style.loading}>Estamos carregando...</h2>
+			}
+			<div className={style.usuarios}>
 			{usuarios.map(usuario => (
-				<div key={usuario.id} className='usuario'>
-					<div className='header'>
+				<div key={usuario.id} className={style.usuario}>
+					<div className={style.header}>
 						<h2>{usuario.nome}</h2>
 					</div>
-					<div className='body'>
+					<div className={style.body}>
 						<p><span>Email: </span>{usuario.email}</p>
 						<p><span>Endereço: </span>{usuario.endereco}</p>
 						<p><span>Cidade: </span>{usuario.cidade}, {usuario.estado}</p>
-						<p>{usuario.id}</p>
 					</div>
-					<div className='footer'>
+					<div className={style.footer}>
 						<Button deletar={true} onClick={() => deletarUsuario(usuario.id)}>
 							<AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
 							Deletar
