@@ -25,9 +25,6 @@ function CadastraPeca(params) {
             marca: marca,
             garantia: garantia
         })
-        .then(response => {
-            console.log(response)
-        })
 
         window.location.href = '/pecas'
     }
@@ -60,7 +57,7 @@ function CadastraPeca(params) {
 					<label htmlFor="garantia">Garantia :</label>
 					<input type="number" id = 'garantia' onChange={(e) => setGarantia(e.target.value)} />
 				</section>
-				<Button type='submit' adicionar={true}>Cadastrar</Button>
+				<Button tipo='submit' adicionar={true} >Cadastrar</Button>
                 <center><a href="/pecas">voltar</a></center>
 			</form>
 		</main>
