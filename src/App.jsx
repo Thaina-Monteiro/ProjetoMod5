@@ -3,11 +3,13 @@ import Header from './components/Header'
 import Usuarios from './pages/Usuarios'
 import Pecas from './pages/Pecas'
 import EditarPeca from './pages/Pecas/EditarPeca'
+import Funcionario from './pages/Funcionario'
 import Home from './pages/Home'
 import NovoUsuario from './pages/Usuarios/NovoUsuario'
+import NovoFuncionario from './pages/Funcionario/NovoFuncionario'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import EditarUsuario from './pages/Usuarios/EditarUsuario'
-import Footer from './components/Footer'
+import EditFuncionario from './pages/Funcionario/EditFuncionario'
 
 function App() {
 
@@ -22,6 +24,12 @@ function App() {
 					<Route path='/usuarios/:id' element={<EditarUsuario />} />
 					<Route path='/pecas' element={<Pecas />}></Route>
 					<Route path='/pecas/:id' element={<EditarPeca />}></Route>
+				</Routes>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/funcionario' element={<Funcionario />} />
+					<Route path='/funcionario/novo' element={<NovoFuncionario />} />
+					<Route path='/funcionario/:id' element={<EditFuncionario />} />
 				</Routes>
 				<Footer />
 			</BrowserRouter>
