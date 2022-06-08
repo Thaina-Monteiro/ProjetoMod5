@@ -76,13 +76,12 @@ function Pecas() {
                             <td>{peca.garantia}</td>
                             <td>{peca.categoria}</td>
                             <td>R${peca.preço},00</td>
-                            <td>
+                            <td className={style.btns} >
                                 <Button btnPecas = {true} onClick={() => editarPeca(peca.id)}>
                                     <AiFillEdit color='white' size='18px' style={{ marginRight: '5px' }} />
                                     Editar
                                 </Button>
-                            </td>
-                            <td>
+
                                 <Button btnPecas = {true} deletar={true} onClick={() => deletarPeca(peca.id)}>
                                     <AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
                                     Deletar 
