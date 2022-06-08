@@ -53,7 +53,7 @@ function Pecas() {
 
     return(
             <div className={style.pecas}>
-            <h1>Controle de Peças</h1>
+            <h2>Controle de Peças</h2>
             <Button adicionar={true} onClick={() => novaPeca()}>
 				<HiUserAdd size='18px' style={{ marginRight: '5px' }} />
 					Adicionar Peça
