@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import style from './../../Usuarios/NovoUsuario/NovoUsuario.module.scss'
-import api from '../../../services/axios';
-import { useParams } from 'react-router-dom';
 import Button from '../../../components/Button';
 import axios from 'axios'
 
