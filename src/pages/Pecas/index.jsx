@@ -6,12 +6,10 @@ import Button from '../../components/Button';
 import { AiFillDelete } from 'react-icons/ai'
 import { AiFillEdit } from 'react-icons/ai'
 import axios from 'axios';
+import {HiUserAdd} from 'react-icons/hi'
 
 function Pecas() {
     const [pecas, setPecas] = useState([])
-    // const [mostraBotao, setMostraBotao] = useState(false)
-    const [loading, setLoading] = useState(false)
-
     const navigate = useNavigate()
 
 	const obtemPecas = async () => {
@@ -23,7 +21,6 @@ function Pecas() {
 			console.log(error);
 		}
 	}
-
 
     const editarPeca = (id) => {
 		navigate(`${id}`)
@@ -41,20 +38,30 @@ function Pecas() {
         obtemPecas()
 	}
 
+    const novaPeca = () => {
+		navigate('novo')
+	}
+
     useEffect(() =>{
         obtemPecas()
     }, [])
 
-    console.log('pecas ', pecas)
+
     return(
             <div className={style.pecas}>
-            <h1>Controle de Peças</h1>
-            <tbody>
-                <table >
+            <h2>Controle de Peças</h2>
+            <Button adicionar={true} onClick={() => novaPeca()}>
+				<HiUserAdd size='18px' style={{ marginRight: '5px' }} />
+					Adicionar Peça
+			</Button>
+            <table>
+                <tbody >
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Qtd</th>
+                        <th>Marca</th>                        
+                        <th>Garantia</th>
                         <th>Categoria</th>
                         <th>Preço</th>
                     </tr>
@@ -62,23 +69,29 @@ function Pecas() {
                 {pecas.map( (peca, index) => {
                     return(
                         <tr key={index}>
-                            <td className="id">{peca.id}</td>
-                            <td>{peca.nome ?? peca.nome.toUpperCase() }</td>
+                            <td>{peca.id}</td>
+                            <td>{peca.nome}</td>
                             <td>{peca.quantidade}</td>
-                            <td>{peca.categoria ?? peca.categoria.toUpperCase() }</td>
+                            <td>{peca.marca}</td>
+                            <td>{peca.garantia}</td>
+                            <td>{peca.categoria}</td>
                             <td>R${peca.preço},00</td>
-                            <Button btnPecas = {true} onClick={() => editarPeca(peca.id)}>
-                                <AiFillEdit color='white' size='18px' style={{ marginRight: '5px' }} />
-                                Editar
-                            </Button>
-                            <Button btnPecas = {true} deletar={true} onClick={() => deletarPeca(peca.id)}>
-                                <AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
-                                Deletar 
-                            </Button>
+                            <td className={style.btns} >
+                                <Button btnPecas = {true} onClick={() => editarPeca(peca.id)}>
+                                    <AiFillEdit color='white' size='18px' style={{ marginRight: '5px' }} />
+                                    Editar
+                                </Button>
+
+                                <Button btnPecas = {true} deletar={true} onClick={() => deletarPeca(peca.id)}>
+                                    <AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
+                                    Deletar 
+                                </Button>
+                            </td>
+                            
                         </tr>
                 )})}
-                </table>
-            </tbody>
+                </tbody>
+            </table>
         </div>  
     )
 }

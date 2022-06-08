@@ -9,6 +9,8 @@ function EditarPeca() {
     const [quantidade, setQuantidade] = useState(0)
     const [categoria, setCategoria] = useState('')
     const [preço, setPreco] = useState(0)
+    const [marca, setMarca] = useState('')
+    const [garantia, setGarantia] = useState(0)
 
     const {id} = useParams()
     useEffect(() =>{
@@ -21,6 +23,8 @@ function EditarPeca() {
                     setQuantidade(peca[0].quantidade)
                     setCategoria(peca[0].categoria)
                     setPreco(peca[0].preço)
+                    setMarca(peca[0].marca)
+                    setGarantia(peca[0].garantia)
                 })
         }
         pegaPeca()
@@ -37,14 +41,17 @@ function EditarPeca() {
             data: {
                 dados:{id: id},
                 dadosNovos:{
-                    nome: nome
+                    nome: nome,
+                    quantidade: quantidade,
+                    categoria: categoria,
+                    preço: preço,
+                    marca: marca,
+                    garantia: garantia
                 }
             }
         })
         window.location.href = '/pecas'
 	}
-
-    // console.log('opa',peca)
 
     return(
         <main className={style.principal}>
@@ -64,7 +71,15 @@ function EditarPeca() {
 				</section>
 				<section className={style.form__secao}>
 					<label htmlFor="preco">Preço</label>
-					<input type="number" id='preco' value={preço} />
+					<input type="number" id='preco' value={preço}  onChange={(e) => setPreco( e.target.value)}/>
+				</section>
+                <section className={style.form__secao}>
+					<label htmlFor="marca">Marca</label>
+					<input type="text" id='marca' value={marca} onChange={(e) => setMarca( e.target.value)}/>
+				</section>
+                <section className={style.form__secao}>
+					<label htmlFor="Garantia">Garantia</label>
+					<input type="number" id='Garantia' value={garantia} onChange={(e) => setGarantia(e.target.value)}/>
 				</section>
 				<Button tipo='submit' adicionar={true}>Alterar</Button>
                 <center><a href="/pecas">voltar</a></center>

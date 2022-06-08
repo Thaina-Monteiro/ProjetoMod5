@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Usuarios from './pages/Usuarios'
 import Pecas from './pages/Pecas'
 import EditarPeca from './pages/Pecas/EditarPeca'
+import CadastrarPeca from './pages/Pecas/CadastrarPeca'
 import Funcionario from './pages/Funcionario'
 import Home from './pages/Home'
 import NovoUsuario from './pages/Usuarios/NovoUsuario'
@@ -11,6 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import EditarUsuario from './pages/Usuarios/EditarUsuario'
 import Fornecedores from './pages/Fornecedores'
 import EditFuncionario from './pages/Funcionario/EditFuncionario'
+import Footer from './components/Footer'
 
 function App() {
 	return (
@@ -32,7 +34,8 @@ function App() {
 				
 				<Routes>
 					<Route path='/fornecedores' element={<Fornecedores/>}></Route>
-				</Routes>	
+				</Routes>
+
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/funcionario' element={<Funcionario />} />
