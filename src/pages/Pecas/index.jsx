@@ -49,6 +49,10 @@ function Pecas() {
     return(
             <div className={style.pecas}>
             <h1>Controle de Peças</h1>
+            <Button adicionar={true} onClick={() => novoUsuario()}>
+				<HiUserAdd size='18px' style={{ marginRight: '5px' }} />
+					Adicionar um novo usuário
+			</Button>
             <tbody>
                 <table >
                     <tr>

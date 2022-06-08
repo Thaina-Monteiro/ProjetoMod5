@@ -10,6 +10,7 @@ import NovoFuncionario from './pages/Funcionario/NovoFuncionario'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import EditarUsuario from './pages/Usuarios/EditarUsuario'
 import EditFuncionario from './pages/Funcionario/EditFuncionario'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -22,9 +23,12 @@ function App() {
 					<Route path='/usuarios' element={<Usuarios />} />
 					<Route path='/usuarios/novo' element={<NovoUsuario />} />
 					<Route path='/usuarios/:id' element={<EditarUsuario />} />
+					
+					{/* Rotas de Peças */}
 					<Route path='/pecas' element={<Pecas />}></Route>
 					<Route path='/pecas/:id' element={<EditarPeca />}></Route>
 				</Routes>
+				
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/funcionario' element={<Funcionario />} />
