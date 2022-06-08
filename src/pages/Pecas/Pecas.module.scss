@@ -16,6 +16,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: auto;
+    margin-top: 20px;
 }
 
 th, td{
@@ -38,4 +39,8 @@ tr:nth-child(even) {
 
 tr:hover:nth-child(1n + 2) {
     background-color: rgb(238, 242, 112);
+}
+
+h1{
+    margin: 25px 0px;
 }

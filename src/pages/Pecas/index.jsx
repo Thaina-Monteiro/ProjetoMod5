@@ -48,7 +48,7 @@ function Pecas() {
     console.log('pecas ', pecas)
     return(
             <div className={style.pecas}>
-            <h1>Opá meu patrão</h1>
+            <h1>Controle de Peças</h1>
             <tbody>
                 <table >
                     <tr>
@@ -75,8 +75,6 @@ function Pecas() {
                                 <AiFillDelete color='white' size='18px' style={{ marginRight: '5px' }} />
                                 Deletar 
                             </Button>
-                            {/* <BotaoDelete id={peca.id} cb={setPecas}/> */}
-                            {/* <BotaoEditar id={peca.id} className="btn"/> */}
                         </tr>
                 )})}
                 </table>

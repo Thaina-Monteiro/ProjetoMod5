@@ -31,14 +31,17 @@ function EditarPeca() {
 
     const alterarPeca = async (e) => {
 		e.preventDefault()
-		const response = await api.put(`/usuarios/${id}`, {
-			nome,
-			email,
-			endereco,
-			cidade,
-			estado
-		})
-		console.log(response)
+		await axios({
+            method: 'put',
+            url: 'https://oficina-mecanica-resilia.herokuapp.com/pecas/',
+            data: {
+                dados:{id: id},
+                dadosNovos:{
+                    nome: nome
+                }
+            }
+        })
+        window.location.href = '/pecas'
 	}
 
     // console.log('opa',peca)
@@ -52,18 +55,19 @@ function EditarPeca() {
 					<input type="text" id='nome' value={nome} onChange={(e) => setNome( e.target.value)}/>
 				</section>
 				<section className={style.form__secao}>
-					<label htmlFor="email">Quantidade</label>
-					<input type="email" id='email' value={quantidade} onChange={(e) => setCadegoria( e.target.value)} />
+					<label htmlFor="quantidade">Quantidade</label>
+					<input type="number" id="uantidade" value={quantidade} onChange={(e) => setQuantidade( e.target.value)} />
 				</section>
 				<section className={style.form__secao}>
-					<label htmlFor="endereco">Categoria</label>
-					<input type="text" id='endereco' value={categoria} />
+					<label htmlFor="categoria">Categoria</label>
+					<input type="text" id='categoria' value={categoria} onChange={(e) => setCategoria( e.target.value)}/>
 				</section>
 				<section className={style.form__secao}>
-					<label htmlFor="cidade">Preço</label>
-					<input type="text" id='cidade' value={preço} />
+					<label htmlFor="preco">Preço</label>
+					<input type="number" id='preco' value={preço} />
 				</section>
-				<Button tipo='submit' adicionar={true}>Enviar</Button>
+				<Button tipo='submit' adicionar={true}>Alterar</Button>
+                <center><a href="/pecas">voltar</a></center>
 			</form>
 		</main>
     )
