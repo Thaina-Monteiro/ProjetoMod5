@@ -4,6 +4,14 @@
 	flex-direction: column;
 	box-shadow: 4px 4px 5px #3B0AA875;
 
+	&:hover {
+		outline: 2px solid #3B0AA8;
+	}
+
+	&:nth-child(n) {
+		animation-name: animacao-card;
+		animation-duration: 1.5s;
+	}
 	.header, .body, .footer {
 		padding: 0 .5rem;
 	}
@@ -41,4 +49,15 @@
 		gap: 1rem;
 	}
 
+}
+
+@keyframes animacao-card {
+	from{
+		opacity: 0;
+		transform: translateY(100%);
+	}
+	to{
+		transform: translateY(0%);
+		opacity: 1;
+	}
 }
