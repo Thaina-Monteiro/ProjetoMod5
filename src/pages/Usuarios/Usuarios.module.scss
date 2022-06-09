@@ -3,11 +3,37 @@
 	position: relative;
 	color: #3B0AA8;
 	min-height: 100vh;
+
+	.form__pesquisa {
+		width: 80%;
+		margin: 2rem auto;
+		display: flex;
+		background-color: black;
+		@media (max-width: 500px) {
+			width: 95%;
+		}
+		input {
+			flex-grow: 1;
+			border: none;
+			border-bottom: 1px solid #3B0AA8;
+			padding-left: .75rem;
+			color: #3B0AA8;
+			font-weight: 500;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
 }
 
 .usuario__novo {
 	width: 80%;
 	margin: 0 auto;
+
+	@media (max-width: 500px) {
+		width: 95%;
+		
+	}
 }
 
 .loading {
