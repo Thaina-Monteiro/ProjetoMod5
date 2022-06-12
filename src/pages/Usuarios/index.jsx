@@ -11,10 +11,12 @@ function Usuarios() {
 	const [usuarios, setUsuarios] = useState([])
 	const [loading, setLoading] = useState(false)
 	const [input, setInput] = useState('')
+	const [erro, setErro] = useState('')
 
 	const navigate = useNavigate()
 
 	const obtemUsuarios = async () => {
+		setErro('')
 		try {
 			setLoading(true)
 			const response = await api.get('/usuarios')
@@ -29,7 +31,7 @@ function Usuarios() {
 	const pesquisaCliente = (e) => {
 		e.preventDefault()
 		const encontraCliente = usuarios.filter(usuario => usuario.nome.toUpperCase().includes(input.toUpperCase()))
-		setUsuarios([...encontraCliente])
+		encontraCliente ? setUsuarios([...encontraCliente]) & setErro('') : setErro('Não encontramos alguém com este nome.') & setUsuarios([])
 	}
 
 	const controlaInput = (valorInput) => {
@@ -67,6 +69,9 @@ function Usuarios() {
 			</form>
 			{loading &&
 			<h2 className={style.loading}>Estamos carregando...</h2>
+			}
+			{erro && 
+				<h3>{erro}</h3>
 			}
 			<section className={style.usuarios}>
 			{usuarios.map(usuario => (
